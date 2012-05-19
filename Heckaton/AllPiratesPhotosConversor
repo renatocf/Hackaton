@@ -1,0 +1,33 @@
+// <Script Language = Javascript>
+
+piratePhotos;
+
+photos = document.getElementByClassName('uiProfilePhoto')
+// These array from PHP receives all the photos from the page
+
+endereços = new Array(photos.length)
+auxiliar = new Array(photos.length)
+
+for(int i=0; i < photos.length; i++)
+	endereços.length = photos[i].parent.href
+
+for(int k=0; k < auxiliar.length; k++)
+	auxiliar[k] = false
+
+for(int j=0; i < endereços.length; j++) {
+	if(endereços[j] == false) {
+		photos[j].crs = Math.floor((Math.random()*piratePhotos.length)+1)
+		auxiliar[j] = true
+		for(int l=0; l < endereços.length - j; l++) {
+			if(endereços[l] == endereços[i]) {
+				photos[l].crs = photos[j].crs
+				auxiliar[l] = true
+			}
+		}
+	}
+}
+
+// </Script>
+
+// arquivo fotos dos piratas
+// arquivo de URL dos excluídos
